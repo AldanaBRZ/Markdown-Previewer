@@ -1,38 +1,88 @@
 .App {
-  text-align: center;
+  background-color: #eeeeee;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.markdown-previewer, .markdown-editor {
+  padding: 30px;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  width: 50%;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.markdown-editor > textarea, .markdown-previewer > div {
+  border: 1px solid;
+  padding: 1.5em;
+  padding-top: 1em;
+  display: block;
+  width: 100%;
+  height: 70%;
+  overflow: auto;
+  font-size: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.markdown-editor > textarea {
+  font-family: 'Roboto Mono', monospace;
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.markdown-editor {
+  float: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.markdown-previewer {
+  float: right;
+}
+
+.markdown-editor > h4, .markdown-previewer > h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 10px;
+  margin: 0;
+  background-color: cadetblue;
+  border: 1px solid;
+  /* border-bottom: none; */
+}
+
+table, td, th {
+  border-collapse: collapse;
+  border: solid 1px black;
+}
+
+body, div, textarea {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+label {
+  display: block;
+}
+
+@media screen and (max-width: 900px) {
+  .markdown-editor, .markdown-previewer {
+    padding-top: 1em;
   }
-  to {
-    transform: rotate(360deg);
+  .markdown-editor > textarea, .markdown-previewer > div {
+    height: 90%;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .markdown-editor, .markdown-previewer {
+    float: none;
+    padding-top: 2em;
+    width: 100%;
+  }
+  .markdown-editor > textarea, .markdown-previewer > div {
+    height: 90%;
+    font-size: 12px;
   }
 }
